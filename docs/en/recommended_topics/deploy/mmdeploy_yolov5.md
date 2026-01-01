@@ -196,19 +196,19 @@ When you deploy the model, it can adopt to the input image dimensions automatica
 
 ## How to Convert Model
 
-Note: The `MMDeploy` root directory used in this guide is `/home/openmmlab/dev/mmdeploy`, please modify it to your `MMDeploy` directory.
+Note: Set `MMDEPLOY_DIR` to your `MMDeploy` root (e.g. `~/dev/mmdeploy`) before running the commands below.
 
 Use the following command to download the pretrained YOLOv5 weight and save it to your device:
 
 ```shell
-wget https://download.openmmlab.com/mmyolo/v0/yolov5/yolov5_s-v61_syncbn_fast_8xb16-300e_coco/yolov5_s-v61_syncbn_fast_8xb16-300e_coco_20220918_084700-86e02187.pth -O /home/openmmlab/dev/mmdeploy/yolov5s.pth
+wget https://download.openmmlab.com/mmyolo/v0/yolov5/yolov5_s-v61_syncbn_fast_8xb16-300e_coco/yolov5_s-v61_syncbn_fast_8xb16-300e_coco_20220918_084700-86e02187.pth -O ${MMDEPLOY_DIR}/yolov5s.pth
 ```
 
 Set the relevant env parameters using the following command as well:
 
 ```shell
-export MMDEPLOY_DIR=/home/openmmlab/dev/mmdeploy
-export PATH_TO_CHECKPOINTS=/home/openmmlab/dev/mmdeploy/yolov5s.pth
+export MMDEPLOY_DIR=~/dev/mmdeploy
+export PATH_TO_CHECKPOINTS=${MMDEPLOY_DIR}/yolov5s.pth
 ```
 
 ### YOLOv5 Static Model Deployment
